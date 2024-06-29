@@ -25,7 +25,7 @@ h1 {
 input[type="text"], input[type="number"], select {
   flex: 1;
   padding: 10px;
-  border: 1px solid #ced4da; /* Light gray border */
+  border: 1px solid #ced4da;
   border-radius: 5px;
   font-size: 16px;
 }
@@ -39,17 +39,15 @@ button {
 }
 
 button.add-btn {
-  background-color: #28a745; /* Green button background */
+  background-color: #28a745;
   color: white;
 }
 
 button.edit-btn {
-  /* background-color: #007bff; Blue button background */
   color: white;
 }
 
 button.delete-btn {
-  /* background-color: #dc3545; Red button background */
   color: white;
 }
 
@@ -66,6 +64,11 @@ button:hover {
   border-radius: 5px;
 }
 
+.price-label, .price-value, .quantity-value, .total-value, .inr-value {
+  flex: 1;
+  text-align: center;
+}
+
 .price-label {
   font-size: 16px;
 }
@@ -79,7 +82,6 @@ button:hover {
 }
 
 .quantity-value {
-  /* color: hwb(20 4% 7%); */
 }
 
 .crypto-actions button {
@@ -90,7 +92,7 @@ button:hover {
 }
 
 .crypto-actions button:hover {
-  background-color: #cfd2d6; /* Darker gray button background on hover */
+  background-color: #cfd2d6;
 }
 
 .dark-mode-btn {
@@ -122,58 +124,58 @@ button:hover {
 
 /* Dark Mode */
 body.dark-mode {
-  background-color: #212529; /* Dark background color */
-  color: #ffffff; /* White text color */
+  background-color: #212529;
+  color: #ffffff;
 }
 
 .dark-mode .container {
-  background-color: #343a40; /* Dark gray container background */
+  background-color: #343a40;
 }
 
 .dark-mode input[type="text"], .dark-mode input[type="number"], .dark-mode select {
-  background-color: #495057; /* Darker gray input background */
-  color: #ffffff; /* White input text color */
+  background-color: #495057;
+  color: #ffffff;
 }
 
 .dark-mode .price-detail {
-  background-color: #495057; /* Darker gray price detail background */
+  background-color: #495057;
 }
 
 .dark-mode .price-value {
-  color: #007bff; /* Blue price value color */
+  color: #007bff;
 }
 
 .dark-mode .dark-mode-btn {
-  background-color: #343a40; /* Dark gray button background */
-  color: #ffffff; /* White button text color */
+  background-color: #343a40;
+  color: #ffffff;
 }
 
 /* Light Mode */
 body:not(.dark-mode) {
-  background-color: #ffffff; /* Light background color */
-  color: #212529; /* Dark text color */
+  background-color: #ffffff;
+  color: #212529;
 }
 
 body:not(.dark-mode) .container {
-  background-color: #ffffff; /* Light gray container background */
+  background-color: #ffffff;
 }
 
 body:not(.dark-mode) input[type="text"], body:not(.dark-mode) input[type="number"], body:not(.dark-mode) select {
-  background-color: #ffffff; /* White input background */
-  color: #495057; /* Dark gray input text color */
+  background-color: #ffffff;
+  color: #495057;
 }
 
 body:not(.dark-mode) .price-detail {
-  background-color: #f8f9fa; /* Light gray price detail background */
+  background-color: #f8f9fa;
 }
 
 body:not(.dark-mode) .price-value {
-  color: #007bff; /* Blue price value color */
+  color: #007bff;
 }
 
 body:not(.dark-mode) .dark-mode-btn {
-  background-color: #f8f9fa; /* Light gray button background */
-  color: #212529; /* Dark button text color */
+  background-color: #f8f9fa;
+  color: #212529;
 }
 
 /* CSS for total value container and total value */
@@ -181,7 +183,6 @@ body:not(.dark-mode) .dark-mode-btn {
   margin-top: 20px;
   font-size: 18px;
   text-align: center;
-  /* color: #09ff00; */
 }
 
 #totalValue {
@@ -189,7 +190,7 @@ body:not(.dark-mode) .dark-mode-btn {
 }
 
 button.update-btn {
-  background-color: #007bff; /* Blue button background */
+  background-color: #007bff;
   color: white;
   margin-left: 10px;
 }
@@ -205,10 +206,45 @@ button.update-btn {
 .inr-container {
   display: flex;
   align-items: center;
-  margin-left: 20px; /* Added margin for space */
+  margin-left: 20px;
 }
 
 .inr-container span {
   margin-right: 10px;
   font-size: 1em;
+}
+
+/* Force landscape mode */
+@media screen and (orientation:portrait) {
+  body {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    width: 100vh;
+    height: 100vw;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+}
+
+/* CSS for the header row */
+.price-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 2px solid #ced4da;
+  font-weight: bold;
+}
+
+.price-header .price-label {
+  flex: 1;
+  text-align: center;
+  font-weight: bold; /* Ensure the Coin label is bold */
+}
+
+.price-header div {
+  flex: 1;
+  text-align: center;
 }
